@@ -1,1 +1,1 @@
-console.log("this is driving me crazy");
+(()=>{"use strict";(()=>{const e=document.querySelector("#content"),t=document.createElement("h1");t.textContent="The Pasta Society",e.appendChild(t);const o=document.createElement("img");o.src="./pasta-pic.jpg",e.appendChild(o);const a=document.createElement("div");a.classList.add("text"),a.textContent="The Pasta Society makes your dreams come true. Choose the pasta, combine it with one of our delicious sauces and you're ready do immerse yourself into the Italian flavour.",e.appendChild(a)})()})();
