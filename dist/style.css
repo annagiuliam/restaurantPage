@@ -1,0 +1,15 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    height: 50%;
+    width: 100%;
+}
