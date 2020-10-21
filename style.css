@@ -41,3 +41,19 @@ img {
     height: 50%;
     width: 100%;
 }
+
+#menu-div {
+  display: flex;
+  flex-direction: row;
+}
+#pasta-grid, #sauce-grid {
+  display : grid;
+  grid-template-columns: 100px 100px;
+  border: 1px solid black;
+}
+
+.cell {
+  height: 35px;
+  width: 100px;
+  cursor: pointer;
+}
