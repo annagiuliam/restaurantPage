@@ -7,11 +7,7 @@ const addMenu = () => {
     addMenuTable(addedDiv);
     addEventListeners();
     addCalcBtn(addedDiv);
-    addSelectionDiv(addedDiv);
-   
-     
-
-    
+    addSelectionDiv(addedDiv);    
 }
 
 const menuItem = (type, name, price) => {
@@ -40,16 +36,14 @@ const createMenuItems = (() => {
     createItem("pasta", "spaghetti", 3.5);
     createItem("pasta", "bucatini", 3);
     createItem("pasta", "farfalle", 4);
+    createItem("pasta", "linguine", 4);
     
     createItem("sauce", "pesto", 2);
     createItem("sauce", "ham & cream", 5);
     createItem("sauce", "marinara", 3);
     createItem("sauce", "mushroom", 4);
-
     
 })();
-
-
 
 
 const addMenuTable = (addedDiv) => {  
@@ -57,31 +51,28 @@ const addMenuTable = (addedDiv) => {
     const menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", "menu-div");
     addedDiv.textContent = "Click on the pasta and the sauce you prefer and check the total price."
-    addedDiv.appendChild(menuDiv);
+    addedDiv.appendChild(menuDiv); 
+
     
-
-    const pastaGrid = document.createElement("div");
-    const pastaTitle = document.createElement("div");
-    pastaTitle.setAttribute("id", "pasta-title");
-    pastaTitle.textContent = "Pasta";
-    pastaGrid.appendChild(pastaTitle);
-    pastaGrid.setAttribute("id", "pasta-grid");    
-    makeGrid(pastaList, pastaGrid, "pasta-cell");
+    createGridDivs("pasta-title", "Pasta", "pasta-grid");
+    const pastaGrid = document.querySelector("#pasta-grid");   
+    makeGrid(pastaList, pastaGrid, "pasta-cell");   
     
-
-
-    const sauceGrid = document.createElement("div");
-    const sauceTitle = document.createElement("div");
-    sauceTitle.setAttribute("id", "sauce-title");
-    sauceTitle.textContent = "Sauce";
-    sauceGrid.appendChild(sauceTitle);
-    sauceGrid.setAttribute("id", "sauce-grid");    
+    createGridDivs("sauce-title", "Sauces", "sauce-grid");
+    const sauceGrid = document.querySelector("#sauce-grid");
     makeGrid(sauceList, sauceGrid, "sauce-cell");
-    
-    
-    menuDiv.appendChild(pastaGrid);
-    menuDiv.appendChild(sauceGrid);
-    
+        
+}
+
+function createGridDivs(titleId, titleText, gridId) {
+  const menuDiv = document.querySelector("#menu-div");
+    const grid = document.createElement("div");
+    const title = document.createElement("div");
+    title.setAttribute("id", titleId);
+    title.textContent = titleText;
+    grid.appendChild(title);
+    grid.setAttribute("id", gridId);
+    menuDiv.appendChild(grid);
 }
 
 function addCalcBtn(addedDiv) {
@@ -141,16 +132,13 @@ const addEventListeners = () => {
 
 function setPastaSelection(cell) {
   const item = pastaList[cell.id];
-  selectedItems[0] = item;
-  
-  //console.log(selectedItems[0].price);
+  selectedItems[0] = item; 
   
 }
 
 function setSauceSelection(cell) {
   const item = sauceList[cell.id];
   selectedItems[1] = item;
-  //console.log(selectedItems[1]);
 }
 
 function showSelection() {  

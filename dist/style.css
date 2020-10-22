@@ -11,6 +11,12 @@ h1 {
 
 body {
   font-family: 'Patrick Hand', cursive;
+  font-size: 22px;
+}
+
+button {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
 }
 
 .tab {
@@ -58,7 +64,7 @@ img {
 #menu-div {
   display: flex;
   width: 900px;
-  height: 300px;
+  height: auto;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -92,11 +98,10 @@ img {
 }
 #pasta-grid, #sauce-grid {
   display : grid;
-  grid-template-columns: 50% 50%;
+  /* grid-template-columns: 50% 50%; */
   margin: 20px;
 
-  /* border-top: 1px solid black;
-  border-left: 1px solid black; */
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
   position: relative;
     z-index: 2;
 }
@@ -114,8 +119,9 @@ img {
 
 .cell {
   height: 35px;
-  width: 100px;
+  
   cursor: pointer;
+  padding: 10px;
   /* border-bottom: 1px solid black;
   border-right: 1px solid black; */
 }
