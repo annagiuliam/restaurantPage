@@ -3,6 +3,7 @@ const addMenu = () => {
     menuTab.classList.add("active");
     
     const addedDiv = document.querySelector("#added-div");
+    
     addMenuTable(addedDiv);
     addEventListeners();
     addCalcBtn(addedDiv);
@@ -42,6 +43,8 @@ const createMenuItems = (() => {
     
     createItem("sauce", "pesto", 2);
     createItem("sauce", "ham & cream", 5);
+    createItem("sauce", "marinara", 3);
+    createItem("sauce", "mushroom", 4);
 
     
 })();
@@ -53,14 +56,25 @@ const addMenuTable = (addedDiv) => {
     
     const menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", "menu-div");
+    addedDiv.textContent = "Click on the pasta and the sauce you prefer and check the total price."
     addedDiv.appendChild(menuDiv);
+    
 
     const pastaGrid = document.createElement("div");
+    const pastaTitle = document.createElement("div");
+    pastaTitle.setAttribute("id", "pasta-title");
+    pastaTitle.textContent = "Pasta";
+    pastaGrid.appendChild(pastaTitle);
     pastaGrid.setAttribute("id", "pasta-grid");    
     makeGrid(pastaList, pastaGrid, "pasta-cell");
+    
 
 
     const sauceGrid = document.createElement("div");
+    const sauceTitle = document.createElement("div");
+    sauceTitle.setAttribute("id", "sauce-title");
+    sauceTitle.textContent = "Sauce";
+    sauceGrid.appendChild(sauceTitle);
     sauceGrid.setAttribute("id", "sauce-grid");    
     makeGrid(sauceList, sauceGrid, "sauce-cell");
     
@@ -94,7 +108,8 @@ function makeGrid(list, grid, newClass) {
       cell.setAttribute("id", i);
     
         if (isNaN(itemProps[j])) {
-          cell.textContent = itemProps[j];
+          let capProp = itemProps[j].charAt(0).toUpperCase() + itemProps[j].slice(1);
+          cell.textContent = capProp;
           cell.classList.add(itemKeys[j]);
         } else {
           cell.textContent = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(itemProps[j]);

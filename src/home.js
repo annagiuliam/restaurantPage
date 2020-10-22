@@ -18,10 +18,12 @@ const addImg = (addedDiv) => {
 }
 
 const addDescription = (addedDiv) => {
+    const textContainer = document.createElement("div");
+    addedDiv.appendChild(textContainer);
     const text = document.createElement("div");
     text.setAttribute("id", "home-text");
     text.textContent = "The Pasta Society makes your dreams come true. Choose the pasta, combine it with one of our delicious sauces and you're ready do immerse yourself into the Italian flavour."
-    addedDiv.appendChild(text);
+    textContainer.appendChild(text);
 }
 
 export { addHome }
