@@ -1,6 +1,7 @@
 import { loadHead } from "./loadHead";
 import { addHome } from "./home";
 import { addMenu } from "./menu";
+import { addContact } from "./contacts"
 
 loadHead();
 addHome();
@@ -16,6 +17,8 @@ const addListeners = (() => {
                 case "home-tab" : addHome();
                 break;
                 case "menu-tab" : addMenu();
+                break;
+                case "contact-tab" : addContact();
                 break;
             }
         })

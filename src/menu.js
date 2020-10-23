@@ -65,7 +65,7 @@ const addMenuTable = (addedDiv) => {
 }
 
 function createGridDivs(titleId, titleText, gridId) {
-  const menuDiv = document.querySelector("#menu-div");
+    const menuDiv = document.querySelector("#menu-div");
     const grid = document.createElement("div");
     const title = document.createElement("div");
     title.setAttribute("id", titleId);
@@ -123,8 +123,7 @@ const addEventListeners = () => {
         setPastaSelection(cell);
         
       } else if (cell.classList.contains("sauce-cell")) {
-        setSauceSelection(cell);
-        //calculatePrice();
+        setSauceSelection(cell);        
       }
     })
   })
