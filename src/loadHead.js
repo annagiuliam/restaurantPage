@@ -1,23 +1,23 @@
 const loadHead = () => {
-    const content = document.querySelector("#content");
+    const container = document.querySelector("#container");
 
-    createTitle(content);
+    createTitle(container);
     createTabBtns();  
-    createAddedDiv(content);  
+    createAddedDiv(container);  
 
 };
 
-const createTitle = (content) => { 
+const createTitle = (container) => { 
     
     const h1 = document.createElement("h1");
     h1.textContent = "The Pasta Society";
-    content.appendChild(h1);    
+    container.appendChild(h1);    
 }
 
-const createTabBtns = function() {
+const createTabBtns = () => {
     const tab = document.createElement("div");
     tab.setAttribute("class", "tab");
-    content.appendChild(tab);
+    container.appendChild(tab);
 
     for (let i = 0; i <3; i++) {
         const button = document.createElement("button");  
@@ -27,10 +27,10 @@ const createTabBtns = function() {
     addBtnsContent();
 };
 
-const createAddedDiv = (content) => {
+const createAddedDiv = (container) => {
     const addedDiv = document.createElement("div");
     addedDiv.setAttribute("id", "added-div");
-    content.appendChild(addedDiv);
+    container.appendChild(addedDiv);
 }
 
 const addBtnsContent = () => {
