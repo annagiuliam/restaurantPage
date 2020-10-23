@@ -7,8 +7,7 @@ const loadHead = () => {
 
 };
 
-const createTitle = (content) => {
-    
+const createTitle = (content) => { 
     
     const h1 = document.createElement("h1");
     h1.textContent = "The Pasta Society";
@@ -17,12 +16,12 @@ const createTitle = (content) => {
 
 const createTabBtns = function() {
     const tab = document.createElement("div");
-    tab.classList.add("tab");
+    tab.setAttribute("class", "tab");
     content.appendChild(tab);
 
     for (let i = 0; i <3; i++) {
         const button = document.createElement("button");  
-        button.classList.add("tablinks");          
+        button.setAttribute("class", "tablinks");          
         tab.appendChild(button);
     }
     addBtnsContent();

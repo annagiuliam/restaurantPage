@@ -17,6 +17,7 @@ const addImg = (addedDiv) => {
 
 }
 
+
 const addDescription = (addedDiv) => {
     const textContainer = document.createElement("div");
     addedDiv.appendChild(textContainer);

@@ -11,7 +11,7 @@ const addListeners = (() => {
 
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
-            clearPage();
+            clearPage(tabs);
             
             switch (tab.id) {
                 case "home-tab" : addHome();
@@ -24,13 +24,12 @@ const addListeners = (() => {
         })
     })
 
-    return { tabs }
+    
 })();
 
 
 
-const clearPage = () => {
-    const tabs = addListeners.tabs;
+const clearPage = (tabs) => {    
     const addedDiv = document.querySelector("#added-div");
     
     tabs.forEach(tab => {

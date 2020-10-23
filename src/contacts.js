@@ -1,4 +1,6 @@
 const addContact = () => {
+    const contactTab = document.querySelector("#contact-tab");
+    contactTab.classList.add("active");
     const addedDiv = document.querySelector("#added-div");
     addInfo(addedDiv);
     addMap(addedDiv);
@@ -16,10 +18,11 @@ function addInfo(addedDiv) {
 }
 
 function addMap(addedDiv) {
-    const imgDiv = document.createElement("img-div");
+    const imgDiv = document.createElement("div");
+    imgDiv.setAttribute("id", "img-div");
     const img = document.createElement("img");
     addedDiv.appendChild(imgDiv);
-    
+
     img.src = "./italy-pic.jpg";    
     imgDiv.appendChild(img);
     
